@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="Rishabh Rautela — Product Designer building clear, human-centered experiences for complex products.">
+  <title>Rishabh Rautela — Product Designer</title>
+  <style>
+    :root {
+      --ink: #111111;
+      --paper: #f4f4f0;
+      --muted: #777873;
+      --line: #d8d8d1;
+      --lime: #d7ff3f;
+      --white: #fff;
+      --max: 1240px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #647d00; outline-offset: 4px; }
+    .wrap { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+    .topbar {
+      min-height: 76px; display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid var(--line); gap: 24px;
+    }
+    .wordmark { font-size: 15px; font-weight: 900; letter-spacing: -.06em; text-transform: uppercase; }
+    .wordmark span { display: inline-block; width: 9px; height: 9px; background: var(--lime); margin-left: 5px; }
+    nav { display: flex; gap: 28px; align-items: center; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; }
+    nav a { transition: opacity .2s ease; }
+    nav a:hover { opacity: .55; }
+    .nav-cta { padding: 12px 16px; border: 1px solid var(--ink); border-radius: 2px; }
+    .hero { padding: 86px 0 76px; display: grid; grid-template-columns: 1.4fr .6fr; gap: 48px; align-items: end; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    .eyebrow:before { content: ""; width: 24px; height: 3px; background: var(--ink); }
+    h1 { font-size: clamp(62px, 10.4vw, 142px); line-height: .83; letter-spacing: -.095em; margin: 30px 0 28px; font-weight: 900; text-transform: uppercase; }
+    h1 .outline { color: transparent; -webkit-text-stroke: 1.5px var(--ink); }
+    .hero-copy { max-width: 365px; padding-bottom: 5px; }
+    .hero-copy p { font-size: 17px; line-height: 1.55; letter-spacing: -.025em; margin: 0 0 25px; }
+    .text-link { display: inline-flex; align-items: center; gap: 10px; border-bottom: 2px solid var(--ink); padding-bottom: 7px; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: .1em; }
+    .arrow { font-size: 17px; line-height: 10px; }
+    .ticker { overflow: hidden; background: var(--lime); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+    .ticker-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 17px 0; font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: .14em; }
+    .ticker-inner span { white-space: nowrap; }
+    .ticker-dot { font-size: 17px; }
+    section { padding: 94px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 34px; }
+    .section-kicker { font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: .15em; margin-bottom: 14px; }
+    h2 { font-size: clamp(36px, 5.4vw, 68px); letter-spacing: -.075em; line-height: .92; text-transform: uppercase; margin: 0; font-weight: 900; }
+    .section-note { max-width: 310px; color: var(--muted); font-size: 13px; line-height: 1.6; margin: 0; }
+    .work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .work-card { min-height: 330px; background: #e6e6df; padding: 25px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+    .work-card.dark { background: var(--ink); color: var(--white); }
+    .work-card.lime { background: var(--lime); }
+    .card-top { display: flex; justify-content: space-between; gap: 16px; align-items: center; position: relative; z-index: 1; }
+    .tag { font-size: 9px; text-transform: uppercase; letter-spacing: .12em; font-weight: 900; border: 1px solid currentColor; padding: 7px 9px; }
+    .card-number { font-size: 11px; font-weight: 800; opacity: .65; }
+    .visual { position: absolute; inset: 58px 20px 55px; display: flex; justify-content: center; align-items: center; }
+    .orb { width: 180px; height: 180px; border: 1px solid currentColor; border-radius: 50%; position: relative; opacity: .9; }
+    .orb:before, .orb:after { content: ""; position: absolute; inset: 20px; border: 1px solid currentColor; border-radius: 50%; }
+    .orb:after { inset: 45px; }
+    .bars { width: min(82%, 360px); display: flex; align-items: end; gap: 8px; height: 150px; transform: skewY(-8deg); }
+    .bars i { display: block; flex: 1; background: var(--lime); height: 40%; }
+    .bars i:nth-child(2) { height: 72%; opacity: .8; }
+    .bars i:nth-child(3) { height: 56%; opacity: .65; }
+    .bars i:nth-child(4) { height: 100%; }
+    .bars i:nth-child(5) { height: 83%; opacity: .7; }
+    .grid-art { width: 230px; height: 160px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; transform: rotate(-7deg); }
+    .grid-art i { border: 1px solid currentColor; }
+    .grid-art i:nth-child(3n) { background: var(--ink); }
+    .dark .grid-art i:nth-child(3n) { background: var(--lime); border-color: var(--lime); }
+    .card-bottom { position: relative; z-index: 1; display: flex; align-items: end; justify-content: space-between; gap: 16px; }
+    .card-bottom h3 { font-size: clamp(24px, 3vw, 37px); line-height: .95; letter-spacing: -.065em; text-transform: uppercase; margin: 0; max-width: 360px; }
+    .card-bottom p { font-size: 10px; text-transform: uppercase; letter-spacing: .08em; margin: 9px 0 0; opacity: .72; }
+    .round-arrow { flex: 0 0 38px; height: 38px; border: 1px solid currentColor; border-radius: 50%; display: grid; place-items: center; font-size: 19px; }
+    .about { background: var(--ink); color: var(--white); }
+    .about .eyebrow:before { background: var(--lime); }
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: start; }
+    .about h2 { max-width: 500px; }
+    .about h2 em { color: var(--lime); font-style: normal; }
+    .about-copy { max-width: 590px; }
+    .about-copy p { font-size: clamp(17px, 2vw, 22px); line-height: 1.55; letter-spacing: -.035em; margin: 0 0 22px; color: #e2e2dc; }
+    .about-copy p strong { color: var(--white); }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; border-top: 1px solid #454545; margin-top: 34px; padding-top: 22px; }
+    .stat strong { display: block; color: var(--lime); font-size: clamp(30px, 4vw, 47px); letter-spacing: -.08em; line-height: 1; }
+    .stat span { display: block; margin-top: 9px; font-size: 9px; line-height: 1.4; text-transform: uppercase; letter-spacing: .1em; color: #b9b9b3; }
+    .principles { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .principle { padding: 24px 24px 26px 0; }
+    .principle + .principle { border-left: 1px solid var(--line); padding-left: 24px; }
+    .principle .index { font-size: 10px; color: var(--muted); font-weight: 800; }
+    .principle h3 { font-size: 20px; letter-spacing: -.05em; text-transform: uppercase; margin: 28px 0 10px; }
+    .principle p { max-width: 270px; font-size: 12px; line-height: 1.65; color: var(--muted); margin: 0; }
+    .outside { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .outside-panel { min-height: 310px; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; }
+    .mountain-panel { background: #d7d8ce; color: var(--ink); position: relative; overflow: hidden; }
+    .mountain-art { position: absolute; inset: 0; opacity: .8; }
+    .mountain-art svg { width: 100%; height: 100%; }
+    .outside-panel > *:not(.mountain-art) { position: relative; z-index: 1; }
+    .outside-panel h3 { font-size: clamp(30px, 4vw, 47px); text-transform: uppercase; letter-spacing: -.075em; line-height: .9; margin: 0; max-width: 340px; }
+    .outside-panel p { font-size: 12px; line-height: 1.6; max-width: 330px; margin: 18px 0 0; }
+    .photo-panel { background: var(--lime); }
+    .photo-mark { font-size: clamp(55px, 9vw, 105px); font-weight: 900; letter-spacing: -.12em; line-height: .8; }
+    .contact { background: var(--lime); padding: 88px 0 36px; }
+    .contact h2 { font-size: clamp(56px, 10vw, 130px); max-width: 900px; }
+    .contact-row { display: flex; justify-content: space-between; align-items: end; gap: 28px; margin-top: 40px; padding-bottom: 50px; }
+    .contact-row p { max-width: 330px; font-size: 15px; line-height: 1.5; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .contact-links a { border: 1px solid var(--ink); padding: 14px 17px; font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: .08em; transition: background .2s, color .2s; }
+    .contact-links a:hover { background: var(--ink); color: var(--lime); }
+    footer { display: flex; justify-content: space-between; gap: 20px; padding-top: 17px; border-top: 1px solid rgba(17,17,17,.3); font-size: 9px; text-transform: uppercase; letter-spacing: .1em; font-weight: 800; }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 32px, var(--max)); }
+      .topbar { min-height: 66px; }
+      nav { gap: 14px; }
+      nav a:not(.nav-cta) { display: none; }
+      .hero { grid-template-columns: 1fr; padding: 66px 0 54px; gap: 26px; }
+      h1 { font-size: clamp(58px, 17vw, 105px); }
+      .hero-copy { max-width: 480px; }
+      .ticker-inner { gap: 16px; justify-content: flex-start; }
+      .ticker-inner span:nth-of-type(2n) { display: none; }
+      section { padding: 68px 0; }
+      .section-head { align-items: start; flex-direction: column; }
+      .work-grid, .about-grid, .outside { grid-template-columns: 1fr; }
+      .work-card { min-height: 300px; }
+      .about-grid { gap: 34px; }
+      .principles { grid-template-columns: 1fr; }
+      .principle, .principle + .principle { border-left: 0; padding: 22px 0; }
+      .principle + .principle { border-top: 1px solid var(--line); }
+      .principle h3 { margin-top: 15px; }
+      .outside-panel { min-height: 270px; }
+      .contact-row { align-items: start; flex-direction: column; }
+      footer { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="wordmark" href="#home" aria-label="Rishabh Rautela home">RR<span></span></a>
+    <nav aria-label="Main navigation">
+      <a href="#work">Selected work</a>
+      <a href="#about">About</a>
+      <a href="#outside">Off the clock</a>
+      <a class="nav-cta" href="#contact">Let's talk ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow">Product designer · India</div>
+        <h1>Make<br>complex<br><span class="outline">feel simple.</span></h1>
+      </div>
+      <div class="hero-copy">
+        <p>I'm Rishabh Rautela — a product designer turning complex workflows into clear, human-centered experiences.</p>
+        <a class="text-link" href="#work">Explore what I do <span class="arrow">↘</span></a>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="Areas of focus">
+      <div class="wrap ticker-inner">
+        <span>Enterprise SaaS</span><span class="ticker-dot">✳</span>
+        <span>FinTech + RegTech</span><span class="ticker-dot">✳</span>
+        <span>Design systems</span><span class="ticker-dot">✳</span>
+        <span>Human-centred by design</span>
+      </div>
+    </div>
+
+    <section class="wrap" id="work">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">01 / What I work on</div>
+          <h2>Design that<br>does the work.</h2>
+        </div>
+        <p class="section-note">A few of the problem spaces I work across. Product details are intentionally high-level; deeper case studies can be shared where appropriate.</p>
+      </div>
+
+      <div class="work-grid">
+        <article class="work-card dark">
+          <div class="card-top"><span class="tag">FinTech / RegTech</span><span class="card-number">01 — 04</span></div>
+          <div class="visual" aria-hidden="true"><div class="bars"><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="card-bottom">
+            <div><h3>Complexity, under control.</h3><p>Screening · Monitoring · Case management</p></div>
+            <span class="round-arrow">↗</span>
+          </div>
+        </article>
+        <article class="work-card">
+          <div class="card-top"><span class="tag">Systems thinking</span><span class="card-number">02 — 04</span></div>
+          <div class="visual" aria-hidden="true"><div class="orb"></div></div>
+          <div class="card-bottom">
+            <div><h3>One system. More possibilities.</h3><p>Foundations · Components · Scale</p></div>
+            <span class="round-arrow">↗</span>
+          </div>
+        </article>
+        <article class="work-card lime">
+          <div class="card-top"><span class="tag">Reporting & workflows</span><span class="card-number">03 — 04</span></div>
+          <div class="visual" aria-hidden="true"><div class="grid-art"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="card-bottom">
+            <div><h3>Make every step clearer.</h3><p>Reporting · Admin · Configuration</p></div>
+            <span class="round-arrow">↗</span>
+          </div>
+        </article>
+        <article class="work-card dark">
+          <div class="card-top"><span class="tag">Early-stage products</span><span class="card-number">04 — 04</span></div>
+          <div class="visual" aria-hidden="true"><div class="grid-art"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="card-bottom">
+            <div><h3>From rough idea to real flow.</h3><p>Research · Prototyping · Game UX</p></div>
+            <span class="round-arrow">↗</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="wrap about-grid">
+        <div>
+          <div class="eyebrow">02 / The person behind the pixels</div>
+          <h2>Curious by nature.<br><em>Precise by design.</em></h2>
+        </div>
+        <div class="about-copy">
+          <p>Over <strong>5 years in design</strong>, I've worked across FinTech, RegTech, e-commerce, gaming and EdTech — partnering with founders, business teams and developers to make products easier to understand and use.</p>
+          <p>At TSS Consultancy, I grew from an intern into a Product Designer and Reporting Manager, taking ownership of core product modules, mentoring designers and helping shape a design system built to scale.</p>
+          <p>My approach is simple: understand the real problem, respect the complexity, and make the next step obvious.</p>
+          <div class="stats">
+            <div class="stat"><strong>5+</strong><span>Years across<br>design disciplines</span></div>
+            <div class="stat"><strong>2024</strong><span>Reporting Manager<br>since</span></div>
+            <div class="stat"><strong>1st</strong><span>Company-wide<br>design system</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">03 / How I think</div>
+          <h2>Good design<br>has a job to do.</h2>
+        </div>
+        <p class="section-note">The principles I bring to the work — especially when the product is complex, the stakes are high, and the user has a lot to get through.</p>
+      </div>
+      <div class="principles">
+        <article class="principle"><span class="index">01 / CLARITY</span><h3>Less friction. More focus.</h3><p>Turn dense information and complicated workflows into experiences people can navigate with confidence.</p></article>
+        <article class="principle"><span class="index">02 / SYSTEMS</span><h3>Think beyond a screen.</h3><p>Build reusable patterns and consistent foundations that help products and teams move faster.</p></article>
+        <article class="principle"><span class="index">03 / OUTCOMES</span><h3>Balance every side.</h3><p>Bring user needs, business goals, technical realities and regulatory requirements into the same conversation.</p></article>
+      </div>
+    </section>
+
+    <section class="wrap" id="outside">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">04 / Outside the interface</div>
+          <h2>Different trails.<br>Same curiosity.</h2>
+        </div>
+        <p class="section-note">When I'm away from product work, I look for a different kind of perspective — usually somewhere in the mountains.</p>
+      </div>
+      <div class="outside">
+        <article class="outside-panel mountain-panel">
+          <div class="mountain-art" aria-hidden="true">
+            <svg viewBox="0 0 600 380" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 280 L105 135 L170 218 L280 65 L425 250 L485 165 L600 290 L600 380 L0 380Z" fill="#929b8b"/>
+              <path d="M150 380 L280 65 L405 380Z" fill="#59695e"/>
+              <path d="M230 190 L280 65 L335 205 L296 183 L278 205 L261 183Z" fill="#f4f4f0"/>
+              <path d="M0 320 L110 240 L180 290 L270 210 L390 310 L475 235 L600 330 L600 380 L0 380Z" fill="#3f5147"/>
+              <path d="M0 348 Q130 320 250 350 T600 340 L600 380 L0 380Z" fill="#202e28"/>
+            </svg>
+          </div>
+          <div class="section-kicker">Off the clock / 01</div>
+          <div><h3>Find the quiet.<br>Take the long way.</h3><p>Offbeat mountain trails, trekking, road trips and the kind of views that make you stop mid-sentence.</p></div>
+        </article>
+        <article class="outside-panel photo-panel">
+          <div class="section-kicker">Off the clock / 02</div>
+          <div class="photo-mark" aria-hidden="true">LOOK<br>CLOSER.</div>
+          <div><h3>Nature, through my lens.</h3><p>Photography is my way of holding on to a moment — the light, the scale, and the feeling of being there.</p><a class="text-link" href="https://www.instagram.com/_silentsummits/" target="_blank" rel="noreferrer">Follow the frames <span class="arrow">↗</span></a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="section-kicker">05 / Got something good?</div>
+        <h2>Let's make<br>it make sense.</h2>
+        <div class="contact-row">
+          <p>Always open to thoughtful conversations, interesting problems and sharing ideas. If you're building something meaningful, let's connect.</p>
+          <div class="contact-links">
+            <a href="mailto:uxrishabh25@gmail.com">Email me ↗</a>
+            <a href="https://www.linkedin.com/in/rishabh-rautela-b76066216/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          </div>
+        </div>
+        <footer><span>© <span id="year">2026</span> Rishabh Rautela</span><span>Designed with intent. Built for clarity.</span><a href="#home">Back to top ↑</a></footer>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
